@@ -24,6 +24,7 @@ var user = flag.String("user", "", "Set user name[DEPRECATED]")
 var pw = flag.String("passwd", "", "Set password[DEPRECATED]")
 var ua = flag.String("ua", "Mozilla/5.0 (X11; Linux; rv:5.0) Gecko/5.0 Firefox/5.0", "Set user-agent in HTTP header")
 var host = flag.String("host", "", "Set host address in HTTP header")
+var proxy = flag.String("proxy", "", "Set Proxy")
 
 // var session = flag.String("session-dir", "", "Directory for session file (server side)")
 
@@ -99,6 +100,7 @@ func makeParamsArry(uris []string) []interface{} {
 	opts["split"] = *split
 	opts["min-split-size"] = "5M"
 	opts["user-agent"] = *ua
+	opts["all-proxy"] = *proxy
 
 	output = append(output, opts)
 
